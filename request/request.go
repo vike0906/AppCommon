@@ -6,17 +6,17 @@ type CommonResponse struct {
 	Code      int
 	Message   string
 	Body      interface{}
-	timestamp int64
+	Timestamp int64
 }
 
 func Success() CommonResponse {
-	return CommonResponse{0, "success", "", time.Now().Unix()}
+	return CommonResponse{Code: 0, Message: "success", Timestamp: time.Now().Unix()}
 }
 
 func Error(errorInfo string) CommonResponse {
-	return CommonResponse{0, errorInfo, "", time.Now().Unix()}
+	return CommonResponse{Code: 0, Message: errorInfo, Timestamp: time.Now().Unix()}
 }
 
 func Response(body interface{}) CommonResponse {
-	return CommonResponse{0, "success", body, time.Now().Unix()}
+	return CommonResponse{Code: 0, Message: "success", Body: body, Timestamp: time.Now().Unix()}
 }
