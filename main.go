@@ -1,8 +1,8 @@
 package main
 
 import (
-	_ "AppCommon/db"
-	"AppCommon/router"
+	_ "./db"
+	"./router"
 )
 
 func main() {
