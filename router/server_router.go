@@ -1,7 +1,7 @@
 package router
 
 import (
-	. "AppCommon/controller"
+	. "AppCommon/request/controller"
 	"fmt"
 	"github.com/kataras/iris"
 	"github.com/kataras/iris/middleware/logger"
@@ -26,7 +26,7 @@ func ServerStart() {
 	//app.Get("/hello", func(cxt iris.Context) {
 	//	cxt.JSON(map[string]string{"message":"hello"})
 	//})
-	app.Post("/login", Login)
+	app.Get("/login", Login)
 	app.Post("/logOut", Login)
 
 	app.Get("/", func(cxt iris.Context) {

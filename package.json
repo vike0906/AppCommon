@@ -4,6 +4,7 @@
   "dependencies": {
     "iris": "go get -u github.com/kataras/iris",
     "uuid": "go get -u github.com/satori/go.uuid",
-    "mysql": "go get -u github.com/go-sql-driver/mysql"
+    "mysql": "go get -u github.com/go-sql-driver/mysql",
+    "redis": "go get github.com/garyburd/redigo/redis"
   }
 }
