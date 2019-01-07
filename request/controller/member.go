@@ -10,6 +10,7 @@ import (
 	"strings"
 )
 
+//login
 func Login(cxt iris.Context) {
 	r := cxt.Request()
 	r.ParseForm()
@@ -39,4 +40,21 @@ func Login(cxt iris.Context) {
 	//return login info
 	user1 := object.CommonUser{Name: user.Name, Token: user.Token}
 	cxt.JSON(request.Response(user1))
+}
+
+//register
+func Register(cxt iris.Context) {
+	r := cxt.Request()
+	r.ParseForm()
+	account := r.Form["account"]
+	password := r.Form["password"]
+	//valication_code
+
+	//add account
+	re := service.AddUser(account[0], password[0])
+	if re != 1 {
+		cxt.JSON(request.Error("register error"))
+		return
+	}
+	//return register info
 }
