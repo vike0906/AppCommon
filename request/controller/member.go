@@ -1,8 +1,8 @@
 package controller
 
 import (
+	"AppCommon/basic"
 	"AppCommon/db"
-	"AppCommon/object"
 	"AppCommon/request"
 	"AppCommon/request/service"
 	"AppCommon/utils"
@@ -38,7 +38,7 @@ func Login(cxt iris.Context) {
 	db.SetJSONEX(token, user, 60)
 
 	//return login info
-	user1 := object.CommonUser{Name: user.Name, Token: user.Token}
+	user1 := basic.CommonUser{Name: user.Name, Token: user.Token}
 	cxt.JSON(request.Response(user1))
 }
 

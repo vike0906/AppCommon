@@ -30,11 +30,16 @@ func init() {
 				panic(err)
 			}
 			//验证redis密码
-			if _, authErr := c.Do("AUTH", redisPassword); authErr != nil {
-				return nil, fmt.Errorf("redis connection error: %s", err)
-				log.Print("redis auth password error...")
-				panic(authErr)
+			if len(redisPassword) > 0 {
+				if _, authErr := c.Do("AUTH", redisPassword); authErr != nil {
+					return nil, fmt.Errorf("redis connection error: %s", err)
+					log.Print("redis auth password error...")
+					panic(authErr)
+				}
+			} else {
+				log.Print("redis connection without password ...")
 			}
+
 			return c, err
 		},
 		TestOnBorrow: func(c redis.Conn, t time.Time) error {

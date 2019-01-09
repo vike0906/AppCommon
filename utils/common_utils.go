@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-//the UUID based on random numbers
+//UUID based on random numbers without "-"
 func UUID() string {
 	uuidStr := uuid.Must(uuid.NewV4()).String()
 	return strings.Replace(uuidStr, "-", "", -1)

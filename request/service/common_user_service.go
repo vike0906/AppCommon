@@ -1,11 +1,11 @@
 package service
 
 import (
-	"AppCommon/object"
+	"AppCommon/basic"
 	"AppCommon/request/dao"
 )
 
-func GetUserByName(userName string) *object.CommonUser {
+func GetUserByName(userName string) *basic.CommonUser {
 	user := dao.SelectCommonUser(userName)
 	return user
 }

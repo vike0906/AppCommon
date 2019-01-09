@@ -1,8 +1,8 @@
 package dao
 
 import (
+	. "AppCommon/basic"
 	. "AppCommon/db"
-	. "AppCommon/object"
 )
 
 func SelectCommonUser(userName string) *CommonUser {

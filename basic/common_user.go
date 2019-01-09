@@ -1,4 +1,4 @@
-package object
+package basic
 
 type CommonUser struct {
 	Name     string

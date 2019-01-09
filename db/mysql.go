@@ -16,6 +16,8 @@ var DB *sql.DB
 func init() {
 	var e error
 	DB, e = sql.Open(driverName, source)
+	DB.SetMaxIdleConns(2)
+	DB.SetMaxOpenConns(10)
 	checkError(e)
 }
 
