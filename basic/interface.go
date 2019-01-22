@@ -14,8 +14,8 @@ type Room interface {
 	//抢包
 	RobPack(uerId int, packId int) error
 
-	//发送抢庄包
-	DispenseBanker(roomId int) error
+	////发送抢庄包
+	//DispenseBanker(roomId int) error
 
 	//抢庄包
 	RobBanker(uerId int, packId int) error
